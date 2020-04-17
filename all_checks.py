@@ -5,11 +5,9 @@ import os
 import shutil
 import sys
 
-
 def check_reboot():
     """Returns True if computer has a pending reboot"""
     return os.path.exists("/run/reboot-require")
-
 
 def check_disk_full(disk, min_gb, min_percent):
     """Returns True if there isn't enough disk space, False otherwise"""
@@ -22,7 +20,6 @@ def check_disk_full(disk, min_gb, min_percent):
         return True
     return False
 
-
 def main():
     if check_reboot():
         print("Pending Reboot.")
@@ -33,7 +30,6 @@ def main():
 
     print("Everything ok.")
     sys.exit(0)
-
 
 if __name__ == '__main__':
     main()
