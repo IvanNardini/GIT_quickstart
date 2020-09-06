@@ -2,7 +2,7 @@
 
 
 def main():
-    print('Everything is ok!')
+  """Check if there is free memory space on computer.""" 
 
 
 main()
