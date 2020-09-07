@@ -4,7 +4,11 @@
 import os
 import shutil
 import sys
+<<<<<<< HEAD
 import socket
+=======
+import psutil
+>>>>>>> origin
 
 def check_reboot():
     """Returns True if computer has a pending reboot"""
@@ -32,6 +36,10 @@ def check_no_network_connection():
         return False
     except:
         return True
+
+def check_cpu_constrained():
+    """Returns True if the CPU is having too much usage, False otherwise."""
+    return psutil.cpu_percent(1) > 75
 
 def main():
     checks = [(check_reboot, 'Pending Reboot.'),
